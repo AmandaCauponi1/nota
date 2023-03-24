@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação da turma</title>
+    <link rel="stylesheet" href="./style2.css">
+    <style>
+        .cor1{
+            color: blue;
+        }
+        .co2{
+            color: greenyellow;
+        }
+        .cor3{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <h1>Programa Situação da turma</h1>
+    <hr>
+        <aside>
+    <label for="">Nome Aluno(a):</label>
+    <input type="text" id="nomeAluno"><br>
+
+    
+    <label for="" >1° Nota:</label>
+    <input type="number " id="input" class=""><br>
+
+    <label for="">2° Nota:</label>
+    <input type="number" id="input1"><br>
+
+    <button id="btn" >Exibir média Aluno</button>
+    <button id="btn2" >Exibir média Turma</button>
+    
+    <p id="situacao"></p>
+    <p id="situacao1"></p>
+    <p id="situacao2"></p>
+    <p id="media1"></p>
+    </aside>
+</section>
+
+    <script>
+       const btn = document.getElementById('btn')
+        let array = []
+       btn.addEventListener('click', () => {
+        let nomeAluno = document.getElementById('nomeAluno').value;
+        const input =parseFloat( document.getElementById('input').value);
+        const input1 = parseFloat(document.getElementById('input1').value);
+        let situacao = document.getElementById('situacao')
+        let situacao1 = document.getElementById('situacao1')
+        let situacao2 = document.getElementById('situacao3')
+        let media1 = document.getElementById('media1')
+
+         media = (input + input1) / 2
+         array.push(media)
+
+        if(media >=7){
+            situacao.innerText(`Parabéns ${nomeAluno}! Você foi aprovado(a)!`)
+            
+        }else if(media < 7 && media >=3 ){
+                document.write(`Atenção ${nomeAluno}, você está em recuperação`)
+            }else if (media < 3){
+            document.write(`Ops ${nomeAluno}, você foi reprovado.`)
+        }
+       })
+    </script>
+
+   
+    
+</body>
+</html>
